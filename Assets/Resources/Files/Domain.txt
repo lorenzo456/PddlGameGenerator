@@ -1,0 +1,25 @@
+(define (domain domain4)
+    (:requirements
+        :strips :equality :typing
+    )
+    (:predicates
+    (unsorted ?l)
+    (above ?l ?l)
+    )
+(:types GameObject level)
+
+(:action add
+    :parameters
+        (?l1 -GameObject ?l2 -GameObject)
+    :precondition
+        (and
+        (unsorted ?l1)
+        (not(above ?l1 ?l2))
+        )
+    :effect
+        (and
+           (not(unsorted ?l1))
+        )
+)
+
+)
